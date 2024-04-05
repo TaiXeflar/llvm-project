@@ -997,8 +997,9 @@ llvm::SmallString<256> abbreviatedString(DynTypedNode N,
   if (Pos != llvm::StringRef::npos) {
     bool MoreText = !llvm::all_of(Result.str().drop_front(Pos), llvm::isSpace);
     Result.resize(Pos);
-    if (MoreText)
+    if (MoreText){
       Result.append(" …");
+      }
   }
   return Result;
 }
